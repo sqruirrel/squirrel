@@ -58,8 +58,13 @@
     
     //更新约束
     [_shopHeaderView mas_updateConstraints:^(MASConstraintMaker *make) {
-       
-        make.height.offset(p.y + _shopHeaderView.bounds.size.height);
+        if(p.y + _shopHeaderView.bounds.size.height < 64){
+            make.height.offset(64);
+        }else if(p.y + _shopHeaderView.bounds.size.height >= 180){
+            make.height.offset(180);
+        }else{
+             make.height.offset(p.y + _shopHeaderView.bounds.size.height);
+        }
         
     }];
     
