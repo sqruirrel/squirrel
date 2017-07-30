@@ -8,6 +8,8 @@
 
 #import "CJWShopController.h"
 #import "CJWFoodDetailController.h"
+#import "NSObject+Formula.h"
+#import "CJWNavigationBar.h"
 
 @interface CJWShopController ()
 
@@ -32,17 +34,22 @@
         
     }];
     
+    //创建手势
+    UIPanGestureRecognizer *pan = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(panGesture:)];
+    //添加手势
+    [self.view addGestureRecognizer:pan];
+    
+    
     //这个super执行的时候会去执行父类的代码,包括创建添加导航条
      [super viewDidLoad];
     self.view.backgroundColor = [UIColor blueColor];
     
     self.navItem.title = @"我喜欢吃";
 
+    //导航条初始背景完全透明
+    self.navBar.navBarView.alpha = 0;
     
-    //创建手势
-    UIPanGestureRecognizer *pan = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(panGesture:)];
-    //添加手势
-    [self.view addGestureRecognizer:pan];
+    
     
     
     
@@ -67,6 +74,13 @@
         }
         
     }];
+    
+    //设置导航条imageview的透明度
+    CGFloat alpha = [self resultWithConsult:_shopHeaderView.bounds.size.height andValue1:CJWValueMake(64, 1) andValue2:CJWValueMake(180, 0)];
+    //设置导航条背景透明度
+    self.navBar.navBarView.alpha = alpha;
+
+    
     
     //重置距离
     [pan setTranslation:CGPointZero inView:pan.view];

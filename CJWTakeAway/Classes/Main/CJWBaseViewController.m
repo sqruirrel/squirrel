@@ -7,6 +7,7 @@
 //
 
 #import "CJWBaseViewController.h"
+#import "CJWNavigationBar.h"
 
 @interface CJWBaseViewController ()
 
@@ -20,7 +21,7 @@
     if (self) {
         
         //添加导航栏
-        UINavigationBar *navBar = [[UINavigationBar alloc] init];
+        CJWNavigationBar *navBar = [[CJWNavigationBar alloc] init];
        
         
         

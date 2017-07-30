@@ -55,6 +55,8 @@
 		84C9508F1F2E10D500D2B123 /* CJWShopController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84C9508E1F2E10D500D2B123 /* CJWShopController.m */; };
 		84C950971F2E132D00D2B123 /* CJWNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84C950961F2E132D00D2B123 /* CJWNavigationController.m */; };
 		84C9509A1F2E141800D2B123 /* CJWBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84C950991F2E141800D2B123 /* CJWBaseViewController.m */; };
+		84C950A01F2E30FF00D2B123 /* CJWNavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 84C9509F1F2E30FF00D2B123 /* CJWNavigationBar.m */; };
+		84C950A31F2E3B4900D2B123 /* NSObject+Formula.m in Sources */ = {isa = PBXBuildFile; fileRef = 84C950A21F2E3B4900D2B123 /* NSObject+Formula.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -161,6 +163,10 @@
 		84C950961F2E132D00D2B123 /* CJWNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJWNavigationController.m; sourceTree = "<group>"; };
 		84C950981F2E141800D2B123 /* CJWBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJWBaseViewController.h; sourceTree = "<group>"; };
 		84C950991F2E141800D2B123 /* CJWBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJWBaseViewController.m; sourceTree = "<group>"; };
+		84C9509E1F2E30FF00D2B123 /* CJWNavigationBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJWNavigationBar.h; sourceTree = "<group>"; };
+		84C9509F1F2E30FF00D2B123 /* CJWNavigationBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJWNavigationBar.m; sourceTree = "<group>"; };
+		84C950A11F2E3B4900D2B123 /* NSObject+Formula.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+Formula.h"; sourceTree = "<group>"; };
+		84C950A21F2E3B4900D2B123 /* NSObject+Formula.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+Formula.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -319,6 +325,8 @@
 				84C9507F1F2E08B900D2B123 /* UIColor+Addition.m */,
 				84C950801F2E08B900D2B123 /* UILabel+Addition.h */,
 				84C950811F2E08B900D2B123 /* UILabel+Addition.m */,
+				84C950A11F2E3B4900D2B123 /* NSObject+Formula.h */,
+				84C950A21F2E3B4900D2B123 /* NSObject+Formula.m */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -447,6 +455,8 @@
 				84C950961F2E132D00D2B123 /* CJWNavigationController.m */,
 				84C950981F2E141800D2B123 /* CJWBaseViewController.h */,
 				84C950991F2E141800D2B123 /* CJWBaseViewController.m */,
+				84C9509E1F2E30FF00D2B123 /* CJWNavigationBar.h */,
+				84C9509F1F2E30FF00D2B123 /* CJWNavigationBar.m */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -544,8 +554,10 @@
 				84C950621F2E08A900D2B123 /* NSLayoutConstraint+MASDebugAdditions.m in Sources */,
 				84C950721F2E08A900D2B123 /* UIImage+MultiFormat.m in Sources */,
 				84C9506B1F2E08A900D2B123 /* SDWebImageDecoder.m in Sources */,
+				84C950A31F2E3B4900D2B123 /* NSObject+Formula.m in Sources */,
 				84C9505B1F2E08A900D2B123 /* MASCompositeConstraint.m in Sources */,
 				84C950661F2E08A900D2B123 /* NSData+ImageContentType.m in Sources */,
+				84C950A01F2E30FF00D2B123 /* CJWNavigationBar.m in Sources */,
 				84C9506D1F2E08A900D2B123 /* SDWebImageDownloaderOperation.m in Sources */,
 				84C950581F2E08A900D2B123 /* AFURLRequestSerialization.m in Sources */,
 				84C9509A1F2E141800D2B123 /* CJWBaseViewController.m in Sources */,
