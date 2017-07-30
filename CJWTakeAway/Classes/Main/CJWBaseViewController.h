@@ -11,7 +11,7 @@
 @interface CJWBaseViewController : UIViewController
 
 //将导航条作为属性公开给子类,让子类可以自己定义属于自己的导航条样式
-@property (nonatomic ,strong) UINavigationBar *navBar;
+@property (nonatomic ,strong ,readonly) UINavigationBar *navBar;
 //navigationItem
-@property (nonatomic ,strong) UINavigationItem *navItem;
+@property (nonatomic ,strong ,readonly) UINavigationItem *navItem;
 @end

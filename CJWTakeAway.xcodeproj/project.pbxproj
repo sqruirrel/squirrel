@@ -218,8 +218,8 @@
 			isa = PBXGroup;
 			children = (
 				84C950901F2E10F400D2B123 /* Main */,
-				84C94FF51F2E085900D2B123 /* FoodDetail */,
 				84C94FFA1F2E085900D2B123 /* Shop */,
+				84C94FF51F2E085900D2B123 /* FoodDetail */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
