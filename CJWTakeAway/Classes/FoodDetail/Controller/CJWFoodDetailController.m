@@ -18,7 +18,7 @@
     [super viewDidLoad];
     
     self.view.backgroundColor = [UIColor grayColor];
-    
+    self.navItem.title = @"红烧翅膀";
     
 }
 

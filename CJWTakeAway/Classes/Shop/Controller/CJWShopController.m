@@ -20,6 +20,7 @@
     
     self.view.backgroundColor = [UIColor blueColor];
     
+    self.navItem.title = @"我喜欢吃";
 }
 
 - (void)didReceiveMemoryWarning {

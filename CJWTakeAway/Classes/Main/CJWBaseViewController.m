@@ -16,7 +16,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    //添加导航栏
     UINavigationBar *navBar = [[UINavigationBar alloc] init];
     [self.view addSubview:navBar];
     //约束
@@ -26,7 +26,15 @@
     }];
     
     
+    UINavigationItem *navItem = [[UINavigationItem alloc] init];
+    //建立联系
+    [navBar setItems:@[navItem]];
     
+    
+    
+    
+    _navBar = navBar;
+    _navItem = navItem;
 }
 
 - (void)didReceiveMemoryWarning {
