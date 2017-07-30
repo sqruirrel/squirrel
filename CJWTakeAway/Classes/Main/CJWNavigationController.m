@@ -1,23 +1,23 @@
 //
-//  CJWFoodDetailController.m
+//  CJWNavigationController.m
 //  CJWTakeAway
 //
 //  Created by admin on 2017/7/30.
 //  Copyright © 2017年 lym. All rights reserved.
 //
 
-#import "CJWFoodDetailController.h"
+#import "CJWNavigationController.h"
 
-@interface CJWFoodDetailController ()
+@interface CJWNavigationController ()
 
 @end
 
-@implementation CJWFoodDetailController
+@implementation CJWNavigationController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.view.backgroundColor = [UIColor grayColor];
+    self.navigationBar.hidden = YES;
     
     
 }
@@ -26,7 +26,5 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
-
 
 @end

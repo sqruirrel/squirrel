@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "CJWShopController.h"
+#import "CJWNavigationController.h"
 
 @interface AppDelegate ()
 
@@ -22,7 +23,7 @@
     //创建一个shop控制器,当做导航栏根控制器
     CJWShopController *shopVC = [[CJWShopController alloc] init];
     
-    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:shopVC];
+    CJWNavigationController *nav = [[CJWNavigationController alloc] initWithRootViewController:shopVC];
     
     //将导航栏当做window的根控制器
     _window.rootViewController = nav;

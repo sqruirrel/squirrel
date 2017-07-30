@@ -53,6 +53,8 @@
 		84C950861F2E08B900D2B123 /* UILabel+Addition.m in Sources */ = {isa = PBXBuildFile; fileRef = 84C950811F2E08B900D2B123 /* UILabel+Addition.m */; };
 		84C9508C1F2E10C400D2B123 /* CJWFoodDetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84C9508B1F2E10C400D2B123 /* CJWFoodDetailController.m */; };
 		84C9508F1F2E10D500D2B123 /* CJWShopController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84C9508E1F2E10D500D2B123 /* CJWShopController.m */; };
+		84C950971F2E132D00D2B123 /* CJWNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84C950961F2E132D00D2B123 /* CJWNavigationController.m */; };
+		84C9509A1F2E141800D2B123 /* CJWBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84C950991F2E141800D2B123 /* CJWBaseViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -155,6 +157,10 @@
 		84C9508B1F2E10C400D2B123 /* CJWFoodDetailController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJWFoodDetailController.m; sourceTree = "<group>"; };
 		84C9508D1F2E10D500D2B123 /* CJWShopController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJWShopController.h; sourceTree = "<group>"; };
 		84C9508E1F2E10D500D2B123 /* CJWShopController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJWShopController.m; sourceTree = "<group>"; };
+		84C950951F2E132D00D2B123 /* CJWNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJWNavigationController.h; sourceTree = "<group>"; };
+		84C950961F2E132D00D2B123 /* CJWNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJWNavigationController.m; sourceTree = "<group>"; };
+		84C950981F2E141800D2B123 /* CJWBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJWBaseViewController.h; sourceTree = "<group>"; };
+		84C950991F2E141800D2B123 /* CJWBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJWBaseViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -437,40 +443,12 @@
 		84C950901F2E10F400D2B123 /* Main */ = {
 			isa = PBXGroup;
 			children = (
-				84C950911F2E10F400D2B123 /* Controller */,
-				84C950921F2E10F400D2B123 /* Model */,
-				84C950931F2E10F400D2B123 /* Other */,
-				84C950941F2E10F400D2B123 /* View */,
+				84C950951F2E132D00D2B123 /* CJWNavigationController.h */,
+				84C950961F2E132D00D2B123 /* CJWNavigationController.m */,
+				84C950981F2E141800D2B123 /* CJWBaseViewController.h */,
+				84C950991F2E141800D2B123 /* CJWBaseViewController.m */,
 			);
 			path = Main;
-			sourceTree = "<group>";
-		};
-		84C950911F2E10F400D2B123 /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Controller;
-			sourceTree = "<group>";
-		};
-		84C950921F2E10F400D2B123 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		84C950931F2E10F400D2B123 /* Other */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Other;
-			sourceTree = "<group>";
-		};
-		84C950941F2E10F400D2B123 /* View */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -570,10 +548,12 @@
 				84C950661F2E08A900D2B123 /* NSData+ImageContentType.m in Sources */,
 				84C9506D1F2E08A900D2B123 /* SDWebImageDownloaderOperation.m in Sources */,
 				84C950581F2E08A900D2B123 /* AFURLRequestSerialization.m in Sources */,
+				84C9509A1F2E141800D2B123 /* CJWBaseViewController.m in Sources */,
 				84C950691F2E08A900D2B123 /* SDImageCacheConfig.m in Sources */,
 				84C950821F2E08B900D2B123 /* NSArray+Addition.m in Sources */,
 				84C950851F2E08B900D2B123 /* UIColor+Addition.m in Sources */,
 				84C950561F2E08A900D2B123 /* AFNetworkReachabilityManager.m in Sources */,
+				84C950971F2E132D00D2B123 /* CJWNavigationController.m in Sources */,
 				84C950591F2E08A900D2B123 /* AFURLResponseSerialization.m in Sources */,
 				84C9505D1F2E08A900D2B123 /* MASConstraintMaker.m in Sources */,
 				84C9506C1F2E08A900D2B123 /* SDWebImageDownloader.m in Sources */,
