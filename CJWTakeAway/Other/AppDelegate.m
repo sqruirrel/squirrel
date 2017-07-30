@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "CJWShopController.h"
 
 @interface AppDelegate ()
 
@@ -16,7 +17,22 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+    //创建窗口
+    _window = [[UIWindow alloc] init];
+    //创建一个shop控制器,当做导航栏根控制器
+    CJWShopController *shopVC = [[CJWShopController alloc] init];
+    
+    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:shopVC];
+    
+    //将导航栏当做window的根控制器
+    _window.rootViewController = nav;
+    
+    //可视
+    [_window makeKeyAndVisible];
+    
+    
+    
+    
     return YES;
 }
 

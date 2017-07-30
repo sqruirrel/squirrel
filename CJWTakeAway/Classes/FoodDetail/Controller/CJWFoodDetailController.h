@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  CJWFoodDetailController.h
 //  CJWTakeAway
 //
 //  Created by admin on 2017/7/30.
@@ -8,8 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
-
+@interface CJWFoodDetailController : UIViewController
 
 @end
-
