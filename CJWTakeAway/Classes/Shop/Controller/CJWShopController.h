@@ -6,8 +6,8 @@
 //  Copyright © 2017年 lym. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "CJWBaseViewController.h"
 
-@interface CJWShopController : UIViewController
+@interface CJWShopController : CJWBaseViewController
 
 @end

@@ -16,22 +16,22 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
+    UINavigationBar *navBar = [[UINavigationBar alloc] init];
+    [self.view addSubview:navBar];
+    //约束
+    [navBar mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.left.right.offset(0);
+        make.height.offset(64);
+    }];
+    
+    
+    
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end
