@@ -15,6 +15,8 @@
 
 //将头部视图定义成属性,在手势方法中更新约束
 @property (nonatomic ,weak) UIView *shopHeaderView;
+//分享按钮
+@property (nonatomic ,weak) UIBarButtonItem *rightBarBtn;
 @end
 
 @implementation CJWShopController
@@ -45,15 +47,22 @@
     self.view.backgroundColor = [UIColor blueColor];
     
     self.navItem.title = @"我喜欢吃";
+    
+    //添加右边分享按钮
+    UIBarButtonItem *rightBarBtn = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"btn_share"] style:UIBarButtonItemStylePlain target:self action:@selector(xx)];
+    self.navItem.rightBarButtonItem = rightBarBtn;
+    rightBarBtn.tintColor = [UIColor whiteColor];
 
     //导航条初始背景完全透明
     self.navBar.navBarView.alpha = 0;
     
-    
+    //设置状态栏一开始为白色
+    self.stateBarStyle = UIStatusBarStyleLightContent;
     
     
     
     _shopHeaderView = shopHeaderView;
+    _rightBarBtn = rightBarBtn;
     
 }
 
@@ -79,8 +88,19 @@
     CGFloat alpha = [self resultWithConsult:_shopHeaderView.bounds.size.height andValue1:CJWValueMake(64, 1) andValue2:CJWValueMake(180, 0)];
     //设置导航条背景透明度
     self.navBar.navBarView.alpha = alpha;
-
     
+    CGFloat gray = [self resultWithConsult:_shopHeaderView.bounds.size.height andValue1:CJWValueMake(180, 1) andValue2:CJWValueMake(64, 0.4)];
+    //设置分享按钮
+    _rightBarBtn.tintColor = [UIColor colorWithWhite:gray alpha:1];
+    
+    //当高度为180的时候,状态栏用白色,其他时候为黑色
+    if (_shopHeaderView.bounds.size.height == 180) {
+        self.stateBarStyle = UIStatusBarStyleLightContent;
+
+    }else {
+        
+        self.stateBarStyle = UIStatusBarStyleDefault;
+    }
     
     //重置距离
     [pan setTranslation:CGPointZero inView:pan.view];

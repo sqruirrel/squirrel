@@ -15,4 +15,6 @@
 @property (nonatomic ,strong ,readonly) CJWNavigationBar *navBar;
 //navigationItem
 @property (nonatomic ,strong ,readonly) UINavigationItem *navItem;
+//状态栏颜色
+@property (nonatomic ,assign) UIStatusBarStyle stateBarStyle;
 @end

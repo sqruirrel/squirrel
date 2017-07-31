@@ -57,4 +57,17 @@
     // Dispose of any resources that can be recreated.
 }
 
+//重写set方法
+-(void)setStateBarStyle:(UIStatusBarStyle)stateBarStyle
+{
+    _stateBarStyle = stateBarStyle;
+    //有人调用set方法说明有人想设置状态栏,此方法刷新状态栏样式
+    [self setNeedsStatusBarAppearanceUpdate];
+}
+
+-(UIStatusBarStyle)preferredStatusBarStyle
+{
+    return self.stateBarStyle;
+}
+
 @end
