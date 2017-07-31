@@ -10,6 +10,9 @@
 #import "CJWFoodDetailController.h"
 #import "NSObject+Formula.h"
 #import "CJWNavigationBar.h"
+#import "CJWEvaluateController.h"
+#import "CJWBusinessController.h"
+#import "CJWCommodityController.h"
 
 @interface CJWShopController ()
 
@@ -17,13 +20,164 @@
 @property (nonatomic ,weak) UIView *shopHeaderView;
 //分享按钮
 @property (nonatomic ,weak) UIBarButtonItem *rightBarBtn;
+//标签栏
+@property (nonatomic ,weak) UIView *tagView;
 @end
 
 @implementation CJWShopController
 
 - (void)viewDidLoad {
    
+    //创建头部视图
+    [self setUpHeaderView];
     
+    [self defaultSetting];
+    
+    //这个super执行的时候会去执行父类的代码,包括创建添加导航条
+     [super viewDidLoad];
+    self.view.backgroundColor = [UIColor blueColor];
+    
+    [self setUpUI];
+    
+}
+
+- (void)setUpUI
+{
+    //创建标签栏
+    [self setUpTagView];
+    //创建滚动视图
+    [self setUpScrollView];
+    
+}
+
+
+
+//创建标签栏的方法
+- (void)setUpTagView
+{
+    //创建标签栏
+    UIView *tagView = [[UIView alloc] init];
+    //颜色
+    tagView.backgroundColor = [UIColor whiteColor];
+    [self.view addSubview:tagView];
+    
+    //约束
+    [tagView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.right.offset(0);
+        make.top.equalTo(_shopHeaderView.mas_bottom).offset(0);
+        make.height.offset(44);
+    }];
+    
+    //创建按钮
+    
+    
+    _tagView = tagView;
+    
+}
+
+//创建按钮的方法
+- (UIButton *)setUpBtnWithTitle:(NSString *)title
+{
+    //创建按钮
+    UIButton *btn = [[UIButton alloc] init];
+    //设置按钮文字
+    [btn setTitle:title forState:UIControlStateNormal];
+    //按钮字体
+    btn.titleLabel.font = [UIFont systemFontOfSize:14];
+    //字体颜色
+    [btn setTitleColor:[UIColor grayColor] forState:UIControlStateNormal];
+    
+    
+    
+    
+    
+    //添加
+    [_tagView addSubview:btn];
+ 
+    
+    return btn;
+    
+}
+
+
+//创建滚动视图方法
+- (void)setUpScrollView
+{
+    //创建scrollview
+    UIScrollView *scrollView = [[UIScrollView alloc] init];
+    scrollView.backgroundColor = [UIColor blueColor];
+    [self.view addSubview:scrollView];
+    
+    //设置分页  滚动条  弹簧
+    scrollView.bounces = NO;
+    scrollView.showsVerticalScrollIndicator = NO;
+    scrollView.showsHorizontalScrollIndicator = NO;
+    scrollView.pagingEnabled = YES;
+    //约束
+    [scrollView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.bottom.right.offset(0);
+        make.top.equalTo(_tagView.mas_bottom).offset(0);
+    }];
+    //创建三个scrollview的子视图
+    CJWCommodityController *vc1 = [[CJWCommodityController alloc] init];
+    CJWEvaluateController *vc2 = [[CJWEvaluateController alloc] init];
+    CJWBusinessController *vc3 = [[CJWBusinessController alloc] init];
+    
+    //建立一个数组存放三个控制器
+    NSArray *vcArr = @[vc1,vc2,vc3];
+    
+    //遍历,依次将三个控制器的view添加到滚动视图中,然后建立父子控制器关系
+    for (UIViewController *vc in vcArr) {
+        //将子视图添加到滚动视图中
+        [scrollView addSubview:vc.view];
+        //建立父子控制器关系
+        [self addChildViewController:vc];
+        //通知父控制器 已经创建联系
+        [vc didMoveToParentViewController:self];
+        
+    }
+    
+    //约束  需要明确的宽高来计算contentsize
+    [scrollView.subviews mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.bottom.offset(0);
+        make.width.equalTo(scrollView);
+    }];
+    
+    [scrollView.subviews mas_distributeViewsAlongAxis:MASAxisTypeHorizontal withFixedSpacing:0 leadSpacing:0 tailSpacing:0];
+    
+}
+
+
+
+//默认设置
+- (void)defaultSetting
+{
+    self.navItem.title = @"我喜欢吃";
+    
+    //添加右边分享按钮
+    UIBarButtonItem *rightBarBtn = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"btn_share"] style:UIBarButtonItemStylePlain target:self action:@selector(xxxx)];
+    self.navItem.rightBarButtonItem = rightBarBtn;
+    rightBarBtn.tintColor = [UIColor whiteColor];
+    
+    //导航条初始背景完全透明
+    self.navBar.navBarView.alpha = 0;
+    
+    //设置状态栏一开始为白色
+    self.stateBarStyle = UIStatusBarStyleLightContent;
+    
+    //创建手势
+    UIPanGestureRecognizer *pan = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(panGesture:)];
+    //添加手势
+    [self.view addGestureRecognizer:pan];
+
+    
+      _rightBarBtn = rightBarBtn;
+
+}
+
+//创建头部视图
+- (void)setUpHeaderView
+{
     //创建首页视图的头部视图
     UIView *shopHeaderView = [[UIView alloc] init];
     shopHeaderView.backgroundColor = [UIColor purpleColor];
@@ -36,34 +190,7 @@
         
     }];
     
-    //创建手势
-    UIPanGestureRecognizer *pan = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(panGesture:)];
-    //添加手势
-    [self.view addGestureRecognizer:pan];
-    
-    
-    //这个super执行的时候会去执行父类的代码,包括创建添加导航条
-     [super viewDidLoad];
-    self.view.backgroundColor = [UIColor blueColor];
-    
-    self.navItem.title = @"我喜欢吃";
-    
-    //添加右边分享按钮
-    UIBarButtonItem *rightBarBtn = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"btn_share"] style:UIBarButtonItemStylePlain target:self action:@selector(xxxx)];
-    self.navItem.rightBarButtonItem = rightBarBtn;
-    rightBarBtn.tintColor = [UIColor whiteColor];
-
-    //导航条初始背景完全透明
-    self.navBar.navBarView.alpha = 0;
-    
-    //设置状态栏一开始为白色
-    self.stateBarStyle = UIStatusBarStyleLightContent;
-    
-    
-    
     _shopHeaderView = shopHeaderView;
-    _rightBarBtn = rightBarBtn;
-    
 }
 
 //手势方法
