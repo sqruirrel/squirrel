@@ -49,7 +49,7 @@
     self.navItem.title = @"我喜欢吃";
     
     //添加右边分享按钮
-    UIBarButtonItem *rightBarBtn = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"btn_share"] style:UIBarButtonItemStylePlain target:self action:@selector(xx)];
+    UIBarButtonItem *rightBarBtn = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"btn_share"] style:UIBarButtonItemStylePlain target:self action:@selector(xxxx)];
     self.navItem.rightBarButtonItem = rightBarBtn;
     rightBarBtn.tintColor = [UIColor whiteColor];
 
