@@ -13,6 +13,7 @@
 #import "CJWEvaluateController.h"
 #import "CJWBusinessController.h"
 #import "CJWCommodityController.h"
+#import "UIColor+Addition.h"
 
 @interface CJWShopController ()
 
@@ -32,12 +33,14 @@
     [self setUpHeaderView];
     
     [self defaultSetting];
+    //添加导航条和滚动视图
+    [self setUpUI];
     
     //这个super执行的时候会去执行父类的代码,包括创建添加导航条
      [super viewDidLoad];
     self.view.backgroundColor = [UIColor blueColor];
     
-    [self setUpUI];
+    
     
 }
 
@@ -68,10 +71,32 @@
         make.height.offset(44);
     }];
     
-    //创建按钮
-    
-    
     _tagView = tagView;
+    
+    //创建按钮
+    [self setUpBtnWithTitle:@"点菜"];
+    [self setUpBtnWithTitle:@"评价"];
+    [self setUpBtnWithTitle:@"商家"];
+    //约束
+    [tagView.subviews mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.bottom.offset(0);
+    }];
+    
+    [tagView.subviews mas_distributeViewsAlongAxis:MASAxisTypeHorizontal withFixedSpacing:0 leadSpacing:0 tailSpacing:0];
+    
+    //创建小黄条
+    UIView *yellowView = [[UIView alloc] init];
+    //设置
+    yellowView.backgroundColor = [UIColor colorWithHex:0xfed30a];
+    //添加
+    [tagView addSubview:yellowView];
+    //约束
+    [yellowView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.centerX.equalTo(tagView.subviews.firstObject.mas_centerX).offset(0);
+        make.height.offset(4);
+        make.width.offset(50);
+        make.bottom.offset(0);
+    }];
     
 }
 
@@ -87,8 +112,8 @@
     //字体颜色
     [btn setTitleColor:[UIColor grayColor] forState:UIControlStateNormal];
     
-    
-    
+    //添加监听
+    [btn addTarget:self action:@selector(btnClick:) forControlEvents:UIControlEventTouchUpInside];
     
     
     //添加
@@ -99,6 +124,11 @@
     
 }
 
+//按钮的监听方法
+- (void)btnClick:(UIButton *)btn
+{
+    
+}
 
 //创建滚动视图方法
 - (void)setUpScrollView
