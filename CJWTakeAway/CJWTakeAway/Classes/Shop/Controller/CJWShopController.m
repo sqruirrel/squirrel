@@ -139,7 +139,8 @@
 //按钮的监听方法
 - (void)btnClick:(UIButton *)btn
 {
-    
+    //点击按钮,控制滚动视图滚动到相应的页数
+     [_scrollView setContentOffset:CGPointMake(btn.tag * _scrollView.bounds.size.width, 0) animated:YES];
 }
 
 //创建滚动视图方法
@@ -221,8 +222,12 @@
         }
         
     }
-    
-    
+}
+
+-(void)scrollViewDidEndScrollingAnimation:(UIScrollView *)scrollView
+{
+    //滚动动画结束的时候 在调用一下改变按钮字体颜色的方法
+     [self scrollViewDidEndDecelerating:scrollView];
 }
 
 
