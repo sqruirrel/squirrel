@@ -8,6 +8,7 @@
 
 #import "CJWHeaderView.h"
 #import "CJWHeaderViewModel.h"
+#import "UIImage+dashLine.h"
 
 @interface CJWHeaderView ()
 //滚动视图
@@ -63,7 +64,7 @@
     
     //虚线
     UIView *dashLineView = [[UIView alloc] init];
-    dashLineView.backgroundColor = [UIColor whiteColor];
+    dashLineView.backgroundColor = [UIColor colorWithPatternImage:[UIImage dashLineWithColor:[UIColor whiteColor]]];
     [self addSubview:dashLineView];
     //约束
     [dashLineView mas_makeConstraints:^(MASConstraintMaker *make) {

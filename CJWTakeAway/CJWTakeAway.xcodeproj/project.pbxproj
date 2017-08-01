@@ -13,6 +13,7 @@
 		84A895F01F303265003DBA06 /* food.json in Resources */ = {isa = PBXBuildFile; fileRef = 84A895EF1F303265003DBA06 /* food.json */; };
 		84A895F31F30330C003DBA06 /* CJWHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 84A895F21F30330C003DBA06 /* CJWHeaderView.m */; };
 		84A895F61F303321003DBA06 /* CJWHeaderViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 84A895F51F303321003DBA06 /* CJWHeaderViewModel.m */; };
+		84A895FC1F30BF20003DBA06 /* UIImage+dashLine.m in Sources */ = {isa = PBXBuildFile; fileRef = 84A895FB1F30BF20003DBA06 /* UIImage+dashLine.m */; };
 		84C94FDA1F2E078200D2B123 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 84C94FD91F2E078200D2B123 /* main.m */; };
 		84C94FE51F2E078200D2B123 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84C94FE41F2E078200D2B123 /* Assets.xcassets */; };
 		84C94FE81F2E078200D2B123 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84C94FE61F2E078200D2B123 /* LaunchScreen.storyboard */; };
@@ -77,6 +78,8 @@
 		84A895F21F30330C003DBA06 /* CJWHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJWHeaderView.m; sourceTree = "<group>"; };
 		84A895F41F303321003DBA06 /* CJWHeaderViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJWHeaderViewModel.h; sourceTree = "<group>"; };
 		84A895F51F303321003DBA06 /* CJWHeaderViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJWHeaderViewModel.m; sourceTree = "<group>"; };
+		84A895FA1F30BF20003DBA06 /* UIImage+dashLine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+dashLine.h"; sourceTree = "<group>"; };
+		84A895FB1F30BF20003DBA06 /* UIImage+dashLine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+dashLine.m"; sourceTree = "<group>"; };
 		84C94FD51F2E078200D2B123 /* CJWTakeAway.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CJWTakeAway.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		84C94FD91F2E078200D2B123 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		84C94FE41F2E078200D2B123 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -478,6 +481,8 @@
 				84C950811F2E08B900D2B123 /* UILabel+Addition.m */,
 				84C950A11F2E3B4900D2B123 /* NSObject+Formula.h */,
 				84C950A21F2E3B4900D2B123 /* NSObject+Formula.m */,
+				84A895FA1F30BF20003DBA06 /* UIImage+dashLine.h */,
+				84A895FB1F30BF20003DBA06 /* UIImage+dashLine.m */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -721,6 +726,7 @@
 				84C950561F2E08A900D2B123 /* AFNetworkReachabilityManager.m in Sources */,
 				84C950971F2E132D00D2B123 /* CJWNavigationController.m in Sources */,
 				84C950591F2E08A900D2B123 /* AFURLResponseSerialization.m in Sources */,
+				84A895FC1F30BF20003DBA06 /* UIImage+dashLine.m in Sources */,
 				84A895EA1F2F628B003DBA06 /* CJWCommodityController.m in Sources */,
 				84A895ED1F2F629E003DBA06 /* CJWEvaluateController.m in Sources */,
 				84C9505D1F2E08A900D2B123 /* MASConstraintMaker.m in Sources */,
