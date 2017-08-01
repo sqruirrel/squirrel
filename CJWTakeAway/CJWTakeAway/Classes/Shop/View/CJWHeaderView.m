@@ -7,6 +7,7 @@
 //
 
 #import "CJWHeaderView.h"
+#import "CJWHeaderViewModel.h"
 
 @interface CJWHeaderView ()
 //滚动视图
@@ -41,6 +42,8 @@
     UIImageView *bgView = [[UIImageView alloc] init];
     bgView.backgroundColor = [UIColor orangeColor];
     [self addSubview:bgView];
+    //填充模式
+    bgView.contentMode = UIViewContentModeScaleAspectFill;
     //约束
     [bgView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.offset(0);
@@ -74,6 +77,8 @@
     UIImageView *iconView = [[UIImageView alloc] init];
     iconView.backgroundColor = [UIColor blackColor];
     [self addSubview:iconView];
+    //填充模式
+    iconView.contentMode = UIViewContentModeScaleAspectFill;
     //约束
     [iconView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.width.height.offset(64);
@@ -107,10 +112,15 @@
     [bulletinLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerY.equalTo(iconView.mas_centerY).offset(16);
         make.left.equalTo(iconView.mas_right).offset(16);
+        make.right.offset(-16);
         
     }];
     
-    
+    _backGroundView = bgView;
+    _loopView = loopView;
+    _iconView = iconView;
+    _bulletinLabel = bulletinLabel;
+    _nameLabel = nameLabel;
     
 }
 
@@ -119,6 +129,19 @@
 {
     
     _headerViewModel = headerViewModel;
+    
+    //去掉数据的最后面的后缀名
+    NSString *bgViewStr = [headerViewModel.poi_back_pic_url stringByDeletingPathExtension];
+    //加载网络数据
+    [_backGroundView sd_setImageWithURL:[NSURL URLWithString:bgViewStr]];
+    
+    //头像
+    NSString *iconViewStr = [headerViewModel.pic_url stringByDeletingPathExtension];
+    //加载网络图片
+    [_iconView sd_setImageWithURL:[NSURL URLWithString:iconViewStr]];
+    
+    _nameLabel.text = headerViewModel.name;
+    _bulletinLabel.text = headerViewModel.bulletin;
  
 }
 

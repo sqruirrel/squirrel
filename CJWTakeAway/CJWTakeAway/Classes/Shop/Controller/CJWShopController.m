@@ -15,6 +15,8 @@
 #import "CJWCommodityController.h"
 #import "UIColor+Addition.h"
 #import "CJWHeaderView.h"
+#import "CJWHeaderViewModel.h"
+
 
 @interface CJWShopController ()<UIScrollViewDelegate>
 
@@ -29,8 +31,9 @@
 //滚动视图
 @property (nonatomic ,weak) UIScrollView *scrollView;
 //定义数组存放模型数据
-@property (nonatomic ,strong) NSArray *jsonData;
-
+//@property (nonatomic ,strong) NSArray *jsonData;
+//定义模型属性
+@property (nonatomic ,strong) CJWHeaderViewModel *headerViewModel;
 @end
 
 @implementation CJWShopController
@@ -279,6 +282,8 @@
     }];
     
     _shopHeaderView = shopHeaderView;
+    //创建完成头部视图后,给内部子控件传数据
+    shopHeaderView.headerViewModel = _headerViewModel;
 }
 
 //手势方法
@@ -333,7 +338,8 @@
     
     //获取需要的数据
     NSDictionary *dict = jsonDict[@"data"][@"poi_info"];
-    
+    CJWHeaderViewModel *headerViewModel = [CJWHeaderViewModel headerViewModelWithDict:dict];
+    _headerViewModel = headerViewModel;
     
 }
 
