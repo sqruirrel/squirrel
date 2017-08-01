@@ -25,6 +25,9 @@
 @property (nonatomic ,weak) UIView *tagView;
 //小黄条
 @property (nonatomic ,weak) UIView *yellowView;
+//滚动视图
+@property (nonatomic ,weak) UIScrollView *scrollView;
+
 @end
 
 @implementation CJWShopController
@@ -76,9 +79,12 @@
     _tagView = tagView;
     
     //创建按钮
-    [self setUpBtnWithTitle:@"点菜"];
+   UIButton *btn = [self setUpBtnWithTitle:@"点菜"];
+    //初始字体
+    btn.titleLabel.font = [UIFont boldSystemFontOfSize:14];
     [self setUpBtnWithTitle:@"评价"];
     [self setUpBtnWithTitle:@"商家"];
+    
     //约束
     [tagView.subviews mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.bottom.offset(0);
@@ -119,11 +125,13 @@
     //添加监听
     [btn addTarget:self action:@selector(btnClick:) forControlEvents:UIControlEventTouchUpInside];
     
+    //设置按钮的tag
+    btn.tag = _tagView.subviews.count;
     
     //添加
     [_tagView addSubview:btn];
  
-    
+//    NSLog(@"%zd",btn.tag);
     return btn;
     
 }
@@ -182,6 +190,8 @@
     
     scrollView.delegate = self;
     
+    _scrollView = scrollView;
+    
 }
 
 //监听scrollView滚动
@@ -191,6 +201,26 @@
     CGFloat page = scrollView.contentOffset.x / scrollView.bounds.size.width;
     //修改小黄条的transform让其实现实时滚动
     _yellowView.transform = CGAffineTransformMakeTranslation(_tagView.bounds.size.width / 3 * page, 0);
+    
+    
+}
+
+//当滚动减速完成的时候,改变标签栏按钮字体
+-(void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView
+{
+    NSInteger page = scrollView.contentOffset.x / scrollView.bounds.size.width;
+    //遍历子控件
+    for (NSInteger i = 0; i < scrollView.subviews.count; i++) {
+        
+        if (_tagView.subviews[i].tag == page) {
+            
+            ((UIButton *)_tagView.subviews[i]).titleLabel.font = [UIFont boldSystemFontOfSize:14];
+        }
+        else{
+             ((UIButton *)_tagView.subviews[i]).titleLabel.font = [UIFont systemFontOfSize:14];
+        }
+        
+    }
     
     
 }
