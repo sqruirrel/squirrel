@@ -10,6 +10,9 @@
 		84A895E71F2F6252003DBA06 /* CJWBusinessController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84A895E61F2F6252003DBA06 /* CJWBusinessController.m */; };
 		84A895EA1F2F628B003DBA06 /* CJWCommodityController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84A895E91F2F628B003DBA06 /* CJWCommodityController.m */; };
 		84A895ED1F2F629E003DBA06 /* CJWEvaluateController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84A895EC1F2F629E003DBA06 /* CJWEvaluateController.m */; };
+		84A895F01F303265003DBA06 /* food.json in Resources */ = {isa = PBXBuildFile; fileRef = 84A895EF1F303265003DBA06 /* food.json */; };
+		84A895F31F30330C003DBA06 /* CJWHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 84A895F21F30330C003DBA06 /* CJWHeaderView.m */; };
+		84A895F61F303321003DBA06 /* CJWHeaderViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 84A895F51F303321003DBA06 /* CJWHeaderViewModel.m */; };
 		84C94FDA1F2E078200D2B123 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 84C94FD91F2E078200D2B123 /* main.m */; };
 		84C94FE51F2E078200D2B123 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84C94FE41F2E078200D2B123 /* Assets.xcassets */; };
 		84C94FE81F2E078200D2B123 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84C94FE61F2E078200D2B123 /* LaunchScreen.storyboard */; };
@@ -69,6 +72,11 @@
 		84A895E91F2F628B003DBA06 /* CJWCommodityController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJWCommodityController.m; sourceTree = "<group>"; };
 		84A895EB1F2F629E003DBA06 /* CJWEvaluateController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJWEvaluateController.h; sourceTree = "<group>"; };
 		84A895EC1F2F629E003DBA06 /* CJWEvaluateController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJWEvaluateController.m; sourceTree = "<group>"; };
+		84A895EF1F303265003DBA06 /* food.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = food.json; sourceTree = "<group>"; };
+		84A895F11F30330C003DBA06 /* CJWHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJWHeaderView.h; sourceTree = "<group>"; };
+		84A895F21F30330C003DBA06 /* CJWHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJWHeaderView.m; sourceTree = "<group>"; };
+		84A895F41F303321003DBA06 /* CJWHeaderViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJWHeaderViewModel.h; sourceTree = "<group>"; };
+		84A895F51F303321003DBA06 /* CJWHeaderViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJWHeaderViewModel.m; sourceTree = "<group>"; };
 		84C94FD51F2E078200D2B123 /* CJWTakeAway.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CJWTakeAway.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		84C94FD91F2E078200D2B123 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		84C94FE41F2E078200D2B123 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -346,6 +354,7 @@
 		84C94FD81F2E078200D2B123 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				84A895EF1F303265003DBA06 /* food.json */,
 				84C94FE41F2E078200D2B123 /* Assets.xcassets */,
 				84C94FE61F2E078200D2B123 /* LaunchScreen.storyboard */,
 				84C94FE91F2E078200D2B123 /* Info.plist */,
@@ -414,8 +423,8 @@
 			children = (
 				84C94FFB1F2E085900D2B123 /* Controller */,
 				84C94FFC1F2E085900D2B123 /* Model */,
-				84C94FFD1F2E085900D2B123 /* Other */,
 				84C94FFE1F2E085900D2B123 /* View */,
+				84C94FFD1F2E085900D2B123 /* Other */,
 			);
 			path = Shop;
 			sourceTree = "<group>";
@@ -432,6 +441,8 @@
 		84C94FFC1F2E085900D2B123 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				84A895F41F303321003DBA06 /* CJWHeaderViewModel.h */,
+				84A895F51F303321003DBA06 /* CJWHeaderViewModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -446,6 +457,8 @@
 		84C94FFE1F2E085900D2B123 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				84A895F11F30330C003DBA06 /* CJWHeaderView.h */,
+				84A895F21F30330C003DBA06 /* CJWHeaderView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -658,6 +671,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84A895F01F303265003DBA06 /* food.json in Resources */,
 				84C94FE81F2E078200D2B123 /* LaunchScreen.storyboard in Resources */,
 				84C94FE51F2E078200D2B123 /* Assets.xcassets in Resources */,
 			);
@@ -700,6 +714,7 @@
 				84C9506D1F2E08A900D2B123 /* SDWebImageDownloaderOperation.m in Sources */,
 				84C950581F2E08A900D2B123 /* AFURLRequestSerialization.m in Sources */,
 				84C9509A1F2E141800D2B123 /* CJWBaseViewController.m in Sources */,
+				84A895F31F30330C003DBA06 /* CJWHeaderView.m in Sources */,
 				84C950691F2E08A900D2B123 /* SDImageCacheConfig.m in Sources */,
 				84C950821F2E08B900D2B123 /* NSArray+Addition.m in Sources */,
 				84C950851F2E08B900D2B123 /* UIColor+Addition.m in Sources */,
@@ -715,6 +730,7 @@
 				84C9508C1F2E10C400D2B123 /* CJWFoodDetailController.m in Sources */,
 				84C9508F1F2E10D500D2B123 /* CJWShopController.m in Sources */,
 				84C950601F2E08A900D2B123 /* MASViewConstraint.m in Sources */,
+				84A895F61F303321003DBA06 /* CJWHeaderViewModel.m in Sources */,
 				84C950751F2E08A900D2B123 /* UIImageView+WebCache.m in Sources */,
 				84C950771F2E08A900D2B123 /* UIView+WebCacheOperation.m in Sources */,
 				84C950861F2E08B900D2B123 /* UILabel+Addition.m in Sources */,

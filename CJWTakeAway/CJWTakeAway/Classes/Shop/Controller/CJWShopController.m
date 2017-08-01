@@ -14,6 +14,7 @@
 #import "CJWBusinessController.h"
 #import "CJWCommodityController.h"
 #import "UIColor+Addition.h"
+#import "CJWHeaderView.h"
 
 @interface CJWShopController ()<UIScrollViewDelegate>
 
@@ -27,6 +28,8 @@
 @property (nonatomic ,weak) UIView *yellowView;
 //滚动视图
 @property (nonatomic ,weak) UIScrollView *scrollView;
+//定义数组存放模型数据
+@property (nonatomic ,strong) NSArray *jsonData;
 
 @end
 
@@ -34,6 +37,8 @@
 
 - (void)viewDidLoad {
    
+    //加载数据
+    [self loadHeaderViewData];
     //创建头部视图
     [self setUpHeaderView];
     
@@ -262,7 +267,7 @@
 - (void)setUpHeaderView
 {
     //创建首页视图的头部视图
-    UIView *shopHeaderView = [[UIView alloc] init];
+    CJWHeaderView *shopHeaderView = [[CJWHeaderView alloc] init];
     shopHeaderView.backgroundColor = [UIColor purpleColor];
     //添加到父控制器
     [self.view addSubview:shopHeaderView];
@@ -318,7 +323,19 @@
 }
 
 
-
+//加载数据
+- (void)loadHeaderViewData
+{
+    //将json文件转为data文件
+    NSData *data = [NSData dataWithContentsOfURL:[[NSBundle mainBundle] URLForResource:@"food.json" withExtension:nil]];
+    //将data文件转成字典
+    NSDictionary *jsonDict = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
+    
+    //获取需要的数据
+    NSDictionary *dict = jsonDict[@"data"][@"poi_info"];
+    
+    
+}
 
 //-(void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
 //{
