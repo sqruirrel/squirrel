@@ -15,7 +15,7 @@
 #import "CJWCommodityController.h"
 #import "UIColor+Addition.h"
 
-@interface CJWShopController ()
+@interface CJWShopController ()<UIScrollViewDelegate>
 
 //将头部视图定义成属性,在手势方法中更新约束
 @property (nonatomic ,weak) UIView *shopHeaderView;
@@ -23,6 +23,8 @@
 @property (nonatomic ,weak) UIBarButtonItem *rightBarBtn;
 //标签栏
 @property (nonatomic ,weak) UIView *tagView;
+//小黄条
+@property (nonatomic ,weak) UIView *yellowView;
 @end
 
 @implementation CJWShopController
@@ -97,8 +99,10 @@
         make.width.offset(50);
         make.bottom.offset(0);
     }];
+    _yellowView = yellowView;
     
 }
+
 
 //创建按钮的方法
 - (UIButton *)setUpBtnWithTitle:(NSString *)title
@@ -170,10 +174,24 @@
     //约束  需要明确的宽高来计算contentsize
     [scrollView.subviews mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.bottom.offset(0);
-        make.width.equalTo(scrollView);
+        //height不能让代码自己计算,需要给一个明确的... 虽然设置了bottom和top,但是不设置height的话依旧无法滚动
+        make.width.height.equalTo(scrollView);
     }];
     
     [scrollView.subviews mas_distributeViewsAlongAxis:MASAxisTypeHorizontal withFixedSpacing:0 leadSpacing:0 tailSpacing:0];
+    
+    scrollView.delegate = self;
+    
+}
+
+//监听scrollView滚动
+-(void)scrollViewDidScroll:(UIScrollView *)scrollView
+{
+    //实时获取滚动视图的页数,并且取小数
+    CGFloat page = scrollView.contentOffset.x / scrollView.bounds.size.width;
+    //修改小黄条的transform让其实现实时滚动
+    _yellowView.transform = CGAffineTransformMakeTranslation(_tagView.bounds.size.width / 3 * page, 0);
+    
     
 }
 
