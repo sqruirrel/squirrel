@@ -9,10 +9,12 @@
 #import "CJWHeaderView.h"
 #import "CJWHeaderViewModel.h"
 #import "UIImage+dashLine.h"
+#import "CJWLoopView.h"
+#import "CJWLoopModel.h"
 
 @interface CJWHeaderView ()
 //滚动视图
-@property (nonatomic ,weak) UIView *loopView;
+@property (nonatomic ,weak) CJWLoopView *loopView;
 
 //头像
 @property (nonatomic ,strong)UIImageView *iconView;
@@ -51,8 +53,9 @@
     }];
     
     //添加轮播
-    UIView *loopView = [[UIView alloc] init];
-    loopView.backgroundColor = [UIColor redColor];
+    CJWLoopView *loopView = [[CJWLoopView alloc] init];
+//    loopView.backgroundColor = [UIColor redColor];
+    loopView.clipsToBounds = YES;
     [self addSubview:loopView];
     //约束
     [loopView mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -144,6 +147,8 @@
     _nameLabel.text = headerViewModel.name;
     _bulletinLabel.text = headerViewModel.bulletin;
  
+    //给轮播视图传数据
+    _loopView.discounts = headerViewModel.discounts;
 }
 
 @end

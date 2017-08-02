@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-
+@class CJWLoopModel;
 @interface CJWHeaderViewModel : NSObject
 
 //背景
@@ -18,6 +18,8 @@
 @property (nonatomic, copy) NSString *pic_url;
 //公告
 @property (nonatomic, copy) NSString *bulletin;
+//优惠信息
+@property (nonatomic ,strong) NSArray <CJWLoopModel *>*discounts;
 
 
 +(instancetype)headerViewModelWithDict:(NSDictionary *)dict;
